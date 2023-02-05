@@ -32,7 +32,7 @@ public class ModItems {
     public static final RegistryObject<Item> GOLDWIRE = ITEMS.register("gold_wire", () -> new Item(defaultProperties()));
 
     //experimental items
-    public static final RegistryObject<Item> BLUEPRINT = ITEMS.register("blueprint", () -> new Item(defaultProperties()));
+    public static final RegistryObject<Item> BLUEPRINT = ITEMS.register("blueprint", () -> new Item(defaultProperties().stacksTo(1)));
 
 
 

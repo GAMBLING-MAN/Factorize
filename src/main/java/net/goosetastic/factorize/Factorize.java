@@ -3,11 +3,16 @@ package net.goosetastic.factorize;
 import net.goosetastic.factorize.block.ModBlocks;
 import net.goosetastic.factorize.block.entity.ModBlockEntities;
 import net.goosetastic.factorize.item.ModItems;
+import net.goosetastic.factorize.screen.BlueprintMakerScreen;
+import net.goosetastic.factorize.screen.ModMenuTypes;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -21,7 +26,9 @@ public class Factorize {
 
         ModItems.register(bus);
         ModBlocks.register(bus);
+
         ModBlockEntities.register(bus);
+        ModMenuTypes.register(bus);
 
         bus.addListener(this::commonSetup);
 
@@ -38,6 +45,14 @@ public class Factorize {
             return new ItemStack(ModItems.CARBATTERY.get());
         }
     };
+
+    @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    public static class ClientModEvents {
+        @SubscribeEvent
+        public static void onClientSetup(FMLClientSetupEvent event) {
+            MenuScreens.register(ModMenuTypes.BLUEPRINT_MAKER_MENU.get(), BlueprintMakerScreen::new);
+        }
+    }
 
 }
 /*public static class ModCreativeTab extends CreativeModeTab {
