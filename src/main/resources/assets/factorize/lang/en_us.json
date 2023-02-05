@@ -1,0 +1,19 @@
+{
+  "item.factorize.advanced_pin_system": "Advanced Pin System",
+  "item.factorize.advanced_plastic": "Advanced Plastic",
+  "item.factorize.car_battery": "Car Battery",
+  "item.factorize.carbon": "Carbon",
+  "item.factorize.carbon_plate": "Carbon Plate",
+  "item.factorize.circuit_board": "Circuit Board",
+  "item.factorize.copper_wire": "Copper Wire",
+  "item.factorize.double_a_battery": "AA Battery",
+  "item.factorize.graphene": "Graphene",
+  "item.factorize.plastic_polymer": "Plastic Polymer",
+  "item.factorize.silicon": "Silicon",
+  "item.factorize.silicon_board": "Silicon Board",
+  "item.factorize.stick_of_ram": "Stick of Ram",
+  "item.factorize.tech_card": "Tech Card",
+  "item.factorize.tech_chip": "Tech Chip",
+
+  "itemGroup.factorizetab": "Factorize"
+}
