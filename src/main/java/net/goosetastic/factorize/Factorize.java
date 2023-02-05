@@ -1,6 +1,7 @@
 package net.goosetastic.factorize;
 
 import net.goosetastic.factorize.block.ModBlocks;
+import net.goosetastic.factorize.block.entity.ModBlockEntities;
 import net.goosetastic.factorize.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -20,6 +21,7 @@ public class Factorize {
 
         ModItems.register(bus);
         ModBlocks.register(bus);
+        ModBlockEntities.register(bus);
 
         bus.addListener(this::commonSetup);
 

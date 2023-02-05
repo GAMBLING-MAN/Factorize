@@ -1,6 +1,7 @@
 package net.goosetastic.factorize.block;
 
 import net.goosetastic.factorize.Factorize;
+import net.goosetastic.factorize.block.custom.BlueprintMaker;
 import net.goosetastic.factorize.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,7 +21,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Factorize.MODID);
 
     public static final RegistryObject<Block> BLUEPRINT_MAKER = registerBlock("blueprint_maker",
-            () -> new Block(defaultProperties().strength(6f)),
+            () -> new BlueprintMaker(defaultProperties().strength(6f).noOcclusion()),
             null);
 
 
