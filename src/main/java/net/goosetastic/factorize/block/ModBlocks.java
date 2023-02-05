@@ -20,12 +20,12 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, Factorize.MODID);
 
     public static final RegistryObject<Block> BLUEPRINT_MAKER = registerBlock("blueprint_maker",
-            () -> new Block(defaultProperties()),
+            () -> new Block(defaultProperties().strength(6f)),
             null);
 
 
     public static BlockBehaviour.Properties defaultProperties() {
-        return BlockBehaviour.Properties.of(Material.STONE).strength(6f).requiresCorrectToolForDrops();
+        return BlockBehaviour.Properties.of(Material.STONE);
     }
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block, CreativeModeTab tab) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
