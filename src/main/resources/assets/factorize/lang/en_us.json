@@ -16,5 +16,7 @@
   "item.factorize.tech_card": "Tech Card",
   "item.factorize.tech_chip": "Tech Chip",
 
+  "block.factorize.blueprint_maker": "Blueprint Maker",
+
   "itemGroup.factorizetab": "Factorize"
 }

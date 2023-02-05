@@ -1,5 +1,6 @@
 package net.goosetastic.factorize;
 
+import net.goosetastic.factorize.block.ModBlocks;
 import net.goosetastic.factorize.item.ModItems;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -19,6 +20,7 @@ public class Factorize {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(bus);
+        ModBlocks.register(bus);
 
         bus.addListener(this::commonSetup);
 

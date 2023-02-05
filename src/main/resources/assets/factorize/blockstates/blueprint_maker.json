@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "": {"model":  "factorize:block/blueprint_maker "}
+  }
+}
