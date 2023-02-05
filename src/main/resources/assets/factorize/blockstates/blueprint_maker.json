@@ -1,19 +1,19 @@
 {
   "variants": {
     "facing=north": {
-      "model":  "factorize:block/blueprint_maker"
-    },
-    "facing=south": {
       "model":  "factorize:block/blueprint_maker",
       "y": 180
     },
+    "facing=south": {
+      "model":  "factorize:block/blueprint_maker"
+    },
     "facing=west": {
       "model":  "factorize:block/blueprint_maker",
-      "y": 270
+      "y": 90
     },
     "facing=east": {
       "model":  "factorize:block/blueprint_maker",
-      "y": 90
+      "y": 270
     }
   }
 }
