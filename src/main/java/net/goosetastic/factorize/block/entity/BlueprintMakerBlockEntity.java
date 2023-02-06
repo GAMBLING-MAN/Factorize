@@ -44,6 +44,9 @@ public class BlueprintMakerBlockEntity extends BlockEntity implements MenuProvid
     private int progress = 0;
     private int maxProgress = 80;
 
+    private static int paperSlot = 0;
+    private static int outputSlot = 1;
+
     public BlueprintMakerBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.BLUEPRINT_MAKER.get(), pos, state);
         this.data = new ContainerData() {
@@ -150,8 +153,8 @@ public class BlueprintMakerBlockEntity extends BlockEntity implements MenuProvid
     private static void CraftItem(BlueprintMakerBlockEntity pEntity) {
         RecipeResult recipe = getRecipe(pEntity);
         if (recipe.hasRecipe) {
-            pEntity.itemHandler.extractItem(1,1,false);
-            pEntity.itemHandler.setStackInSlot(2,recipe.result);
+            pEntity.itemHandler.extractItem(paperSlot,1,false);
+            pEntity.itemHandler.setStackInSlot(outputSlot,recipe.result);
         }
     }
 
@@ -160,7 +163,7 @@ public class BlueprintMakerBlockEntity extends BlockEntity implements MenuProvid
         for (int i = 0; i < entity.itemHandler.getSlots(); i++) {
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
-        boolean hasRecipe = entity.itemHandler.getStackInSlot(1).getItem() == Items.PAPER && canOutput(inventory);
+        boolean hasRecipe = entity.itemHandler.getStackInSlot(paperSlot).getItem() == Items.PAPER && canOutput(inventory);
 
         ItemStack result;
         if (!hasRecipe) {
@@ -173,7 +176,7 @@ public class BlueprintMakerBlockEntity extends BlockEntity implements MenuProvid
     }
 
     private static boolean canOutput(SimpleContainer inventory) {
-        return inventory.getItem(2).isEmpty();
+        return inventory.getItem(outputSlot).isEmpty();
     }
 
 

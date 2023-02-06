@@ -34,11 +34,11 @@ public class BlueprintMakerMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
 
         this.blockEntity.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY).ifPresent(handler -> {
-            this.addSlot(new SlotItemHandler(handler,0,86,15));
-            this.addSlot(new SlotItemHandler(handler,1,86,60));
-            this.addSlot(new SlotItemHandler(handler,2,12,15));
-            this.addSlot(new SlotItemHandler(handler,3,12,30));
-            this.addSlot(new SlotItemHandler(handler,4,12,45));
+            this.addSlot(new SlotItemHandler(handler,0,150,9));
+            this.addSlot(new SlotItemHandler(handler,1,150,61));
+            this.addSlot(new SlotItemHandler(handler,2,43,33));
+            this.addSlot(new SlotItemHandler(handler,3,79,33));
+            this.addSlot(new SlotItemHandler(handler,4,115,33));
         });
 
         addDataSlots(data);
@@ -116,14 +116,14 @@ public class BlueprintMakerMenu extends AbstractContainerMenu {
     private void addPlayerInventory(Inventory playerInventory) {
         for (int i = 0; i < 3; ++i) {
             for (int l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 84 + i * 18));
             }
         }
     }
 
     private void addPlayerHotbar(Inventory playerInventory) {
         for (int i = 0; i < 9; ++i) {
-            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 142));
         }
     }
 }
